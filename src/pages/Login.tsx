@@ -1,5 +1,10 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type FormValues = {
+  email: string;
+  password: string;
+};
 
 const Login = () => {
   // React form
@@ -7,9 +12,9 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormValues>();
 
-  const onSubmit = (data) => {
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data);
   };
 
