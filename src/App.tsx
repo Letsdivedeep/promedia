@@ -1,10 +1,7 @@
 import "./App.css";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Approuter from "./routes/AppRoutes";
 
 function App() {
-  // return <Login />;
-  return <Signup />;
+ return <Approuter></Approuter>
 }
-
 export default App;
