@@ -5,6 +5,8 @@ import * as yup from "yup";
 import { CustomPrimaryButton } from "../../shared/components/CustomPrimaryButton";
 import CustomInput from "../../shared/components/CustomInput";
 import SignUpFooter from "./components/SignUpFooter";
+import Divider from "../../shared/components/Divider";
+import SignupFom from "./components/SignUpForm.js";
 
 interface FormValues {
   userName: string;
@@ -52,25 +54,9 @@ const Signup = () => {
             <CustomPrimaryButton additionalClassName="btn-success" onClick={() => { }} label="Signup with Google" ></CustomPrimaryButton>
             <CustomPrimaryButton additionalClassName="btn-success" onClick={() => { }} label="Signup with GitHub" ></CustomPrimaryButton>
 
-            <div className="divider">OR</div>
+            <Divider></Divider>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-              {/* userName */}
-              <CustomInput className="input input-bordered w-full max-w-lg" placeholder="User Name" label="User Name" type="text" handlerFunction={register} handlerFuncArgs="userName" errors={errors}></CustomInput>
-
-              {/* Email */}
-
-              <CustomInput className="input input-bordered w-full max-w-lg" placeholder="Email" label="Email" type="text" handlerFunction={register} handlerFuncArgs="email" errors={errors}></CustomInput>
-
-              {/* Password */}
-              <CustomInput className="input input-bordered w-full max-w-lg" placeholder="Password" label="Password" type="password" handlerFunction={register} handlerFuncArgs="password" errors={errors}></CustomInput>
-
-              {/* Confirm Password */}
-
-              <CustomInput className="input input-bordered w-full max-w-lg" placeholder="Confirm Password" label="Confirm Password" type="password" handlerFunction={register} handlerFuncArgs="confirmPassword" errors={errors}></CustomInput>
-
-              <CustomPrimaryButton additionalClassName="btn-primary" onClick={onSubmit} label="Sign Up" ></CustomPrimaryButton>
-            </form>
+            <SignupFom onSubmit={handleSubmit(onSubmit)} errors={errors} register={register}></SignupFom>
 
             <SignUpFooter></SignUpFooter>
           </div>
