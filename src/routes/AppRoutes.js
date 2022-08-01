@@ -8,6 +8,8 @@ const Approuter = () => {
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
+        <Route path="landing" element={<LandingPage />} />
+
         <Route exact path="/" element={<Navigate to="/signup" />} />
       </Routes>
     </BrowserRouter>
